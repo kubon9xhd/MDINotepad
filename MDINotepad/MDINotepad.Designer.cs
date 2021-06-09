@@ -32,15 +32,22 @@ namespace MDINotepad
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDINotepad));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuPrint = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUndo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuCopy = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCut = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,20 +58,16 @@ namespace MDINotepad
             this.zoomInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.titleHoriontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.titleVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendFeedBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutNotepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.mnuNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuPrint = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tbrNew = new System.Windows.Forms.ToolStripButton();
             this.tbrOpen = new System.Windows.Forms.ToolStripButton();
             this.tbrSave = new System.Windows.Forms.ToolStripButton();
@@ -75,7 +78,14 @@ namespace MDINotepad
             this.tbrPaste = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.tbrHelp = new System.Windows.Forms.ToolStripButton();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.mntrCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dialogOpen = new System.Windows.Forms.OpenFileDialog();
+            this.dialogSave = new System.Windows.Forms.SaveFileDialog();
+            this.dialogFont = new System.Windows.Forms.FontDialog();
+            this.dialogColor = new System.Windows.Forms.ColorDialog();
+            this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -91,7 +101,7 @@ namespace MDINotepad
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(871, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -111,6 +121,20 @@ namespace MDINotepad
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // mnuNew
+            // 
+            this.mnuNew.Image = ((System.Drawing.Image)(resources.GetObject("mnuNew.Image")));
+            this.mnuNew.Name = "mnuNew";
+            this.mnuNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.mnuNew.Size = new System.Drawing.Size(186, 22);
+            this.mnuNew.Text = "&New";
+            this.mnuNew.Click += new System.EventHandler(this.mnuNew_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(183, 6);
+            // 
             // mnuOpen
             // 
             this.mnuOpen.Image = ((System.Drawing.Image)(resources.GetObject("mnuOpen.Image")));
@@ -118,6 +142,7 @@ namespace MDINotepad
             this.mnuOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.mnuOpen.Size = new System.Drawing.Size(186, 22);
             this.mnuOpen.Text = "&Open";
+            this.mnuOpen.Click += new System.EventHandler(this.mnuOpen_Click);
             // 
             // mnuSave
             // 
@@ -126,6 +151,45 @@ namespace MDINotepad
             this.mnuSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.mnuSave.Size = new System.Drawing.Size(186, 22);
             this.mnuSave.Text = "&Save";
+            this.mnuSave.Click += new System.EventHandler(this.mnuSave_Click);
+            // 
+            // mnuSaveAs
+            // 
+            this.mnuSaveAs.Image = ((System.Drawing.Image)(resources.GetObject("mnuSaveAs.Image")));
+            this.mnuSaveAs.Name = "mnuSaveAs";
+            this.mnuSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.mnuSaveAs.Size = new System.Drawing.Size(186, 22);
+            this.mnuSaveAs.Text = "&Save &As";
+            this.mnuSaveAs.Click += new System.EventHandler(this.mnuSaveAs_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(183, 6);
+            // 
+            // mnuPrint
+            // 
+            this.mnuPrint.Image = ((System.Drawing.Image)(resources.GetObject("mnuPrint.Image")));
+            this.mnuPrint.Name = "mnuPrint";
+            this.mnuPrint.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.mnuPrint.Size = new System.Drawing.Size(186, 22);
+            this.mnuPrint.Text = "Print";
+            this.mnuPrint.Click += new System.EventHandler(this.mnuPrint_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(183, 6);
+            // 
+            // mnuExit
+            // 
+            this.mnuExit.Image = ((System.Drawing.Image)(resources.GetObject("mnuExit.Image")));
+            this.mnuExit.Name = "mnuExit";
+            this.mnuExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.mnuExit.Size = new System.Drawing.Size(186, 22);
+            this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -134,8 +198,8 @@ namespace MDINotepad
             this.mnuRedo,
             this.toolStripSeparator1,
             this.mnuCopy,
-            this.mnuPaste,
-            this.mnuCut});
+            this.mnuCut,
+            this.mnuPaste});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
@@ -144,15 +208,19 @@ namespace MDINotepad
             // 
             this.mnuUndo.Image = ((System.Drawing.Image)(resources.GetObject("mnuUndo.Image")));
             this.mnuUndo.Name = "mnuUndo";
+            this.mnuUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.mnuUndo.Size = new System.Drawing.Size(180, 22);
             this.mnuUndo.Text = "Undo";
+            this.mnuUndo.Click += new System.EventHandler(this.mnuUndo_Click);
             // 
             // mnuRedo
             // 
             this.mnuRedo.Image = ((System.Drawing.Image)(resources.GetObject("mnuRedo.Image")));
             this.mnuRedo.Name = "mnuRedo";
+            this.mnuRedo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
             this.mnuRedo.Size = new System.Drawing.Size(180, 22);
             this.mnuRedo.Text = "Redo";
+            this.mnuRedo.Click += new System.EventHandler(this.mnuRedo_Click);
             // 
             // toolStripSeparator1
             // 
@@ -163,22 +231,28 @@ namespace MDINotepad
             // 
             this.mnuCopy.Image = ((System.Drawing.Image)(resources.GetObject("mnuCopy.Image")));
             this.mnuCopy.Name = "mnuCopy";
+            this.mnuCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.mnuCopy.Size = new System.Drawing.Size(180, 22);
             this.mnuCopy.Text = "Copy";
-            // 
-            // mnuPaste
-            // 
-            this.mnuPaste.Image = ((System.Drawing.Image)(resources.GetObject("mnuPaste.Image")));
-            this.mnuPaste.Name = "mnuPaste";
-            this.mnuPaste.Size = new System.Drawing.Size(180, 22);
-            this.mnuPaste.Text = "Paste";
+            this.mnuCopy.Click += new System.EventHandler(this.mnuCopy_Click);
             // 
             // mnuCut
             // 
             this.mnuCut.Image = ((System.Drawing.Image)(resources.GetObject("mnuCut.Image")));
             this.mnuCut.Name = "mnuCut";
+            this.mnuCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.mnuCut.Size = new System.Drawing.Size(180, 22);
             this.mnuCut.Text = "Cut";
+            this.mnuCut.Click += new System.EventHandler(this.mnuCut_Click);
+            // 
+            // mnuPaste
+            // 
+            this.mnuPaste.Image = ((System.Drawing.Image)(resources.GetObject("mnuPaste.Image")));
+            this.mnuPaste.Name = "mnuPaste";
+            this.mnuPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.mnuPaste.Size = new System.Drawing.Size(180, 22);
+            this.mnuPaste.Text = "Paste";
+            this.mnuPaste.Click += new System.EventHandler(this.mnuPaste_Click);
             // 
             // formatToolStripMenuItem
             // 
@@ -197,6 +271,7 @@ namespace MDINotepad
             this.wordWrapToolStripMenuItem.Name = "wordWrapToolStripMenuItem";
             this.wordWrapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wordWrapToolStripMenuItem.Text = "Word Wrap";
+            this.wordWrapToolStripMenuItem.Click += new System.EventHandler(this.wordWrapToolStripMenuItem_Click);
             // 
             // fontToolStripMenuItem
             // 
@@ -204,6 +279,7 @@ namespace MDINotepad
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
             this.fontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fontToolStripMenuItem.Text = "Font";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -216,12 +292,17 @@ namespace MDINotepad
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
             this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colorToolStripMenuItem.Text = "Color";
+            this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zoomToolStripMenuItem,
-            this.statusBarToolStripMenuItem});
+            this.statusBarToolStripMenuItem,
+            this.arrangeIconsToolStripMenuItem,
+            this.cascadeToolStripMenuItem,
+            this.titleHoriontalToolStripMenuItem,
+            this.titleVerticalToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "&View";
@@ -240,15 +321,19 @@ namespace MDINotepad
             // 
             this.zoomInToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("zoomInToolStripMenuItem.Image")));
             this.zoomInToolStripMenuItem.Name = "zoomInToolStripMenuItem";
+            this.zoomInToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
             this.zoomInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoomInToolStripMenuItem.Text = "Zoom In";
+            this.zoomInToolStripMenuItem.Click += new System.EventHandler(this.zoomInToolStripMenuItem_Click);
             // 
             // zoomOutToolStripMenuItem
             // 
             this.zoomOutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("zoomOutToolStripMenuItem.Image")));
             this.zoomOutToolStripMenuItem.Name = "zoomOutToolStripMenuItem";
+            this.zoomOutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
             this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoomOutToolStripMenuItem.Text = "Zoom Out";
+            this.zoomOutToolStripMenuItem.Click += new System.EventHandler(this.zoomOutToolStripMenuItem_Click);
             // 
             // statusBarToolStripMenuItem
             // 
@@ -257,6 +342,35 @@ namespace MDINotepad
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
             this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statusBarToolStripMenuItem.Text = "Status bar";
+            this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.statusBarToolStripMenuItem_Click);
+            // 
+            // arrangeIconsToolStripMenuItem
+            // 
+            this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arrangeIconsToolStripMenuItem.Text = "Arrange Icons";
+            this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.arrangeIconsToolStripMenuItem_Click);
+            // 
+            // cascadeToolStripMenuItem
+            // 
+            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cascadeToolStripMenuItem.Text = "Cascade";
+            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
+            // 
+            // titleHoriontalToolStripMenuItem
+            // 
+            this.titleHoriontalToolStripMenuItem.Name = "titleHoriontalToolStripMenuItem";
+            this.titleHoriontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.titleHoriontalToolStripMenuItem.Text = "Title Horizontal";
+            this.titleHoriontalToolStripMenuItem.Click += new System.EventHandler(this.titleHoriontalToolStripMenuItem_Click);
+            // 
+            // titleVerticalToolStripMenuItem
+            // 
+            this.titleVerticalToolStripMenuItem.Name = "titleVerticalToolStripMenuItem";
+            this.titleVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.titleVerticalToolStripMenuItem.Text = "Title Vertical";
+            this.titleVerticalToolStripMenuItem.Click += new System.EventHandler(this.titleVerticalToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -275,6 +389,7 @@ namespace MDINotepad
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
             this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewHelpToolStripMenuItem.Text = "View Help";
+            this.viewHelpToolStripMenuItem.Click += new System.EventHandler(this.viewHelpToolStripMenuItem_Click);
             // 
             // sendFeedBackToolStripMenuItem
             // 
@@ -295,6 +410,7 @@ namespace MDINotepad
             this.aboutNotepadToolStripMenuItem.Name = "aboutNotepadToolStripMenuItem";
             this.aboutNotepadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutNotepadToolStripMenuItem.Text = "About Notepad";
+            this.aboutNotepadToolStripMenuItem.Click += new System.EventHandler(this.aboutNotepadToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -311,67 +427,9 @@ namespace MDINotepad
             this.tbrHelp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(871, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1024, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 535);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(871, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // mnuNew
-            // 
-            this.mnuNew.Image = ((System.Drawing.Image)(resources.GetObject("mnuNew.Image")));
-            this.mnuNew.Name = "mnuNew";
-            this.mnuNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.mnuNew.Size = new System.Drawing.Size(186, 22);
-            this.mnuNew.Text = "&New";
-            // 
-            // mnuSaveAs
-            // 
-            this.mnuSaveAs.Image = ((System.Drawing.Image)(resources.GetObject("mnuSaveAs.Image")));
-            this.mnuSaveAs.Name = "mnuSaveAs";
-            this.mnuSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.mnuSaveAs.Size = new System.Drawing.Size(186, 22);
-            this.mnuSaveAs.Text = "&Save &As";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(183, 6);
-            // 
-            // mnuPrint
-            // 
-            this.mnuPrint.Image = ((System.Drawing.Image)(resources.GetObject("mnuPrint.Image")));
-            this.mnuPrint.Name = "mnuPrint";
-            this.mnuPrint.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.mnuPrint.Size = new System.Drawing.Size(186, 22);
-            this.mnuPrint.Text = "Print";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(183, 6);
-            // 
-            // mnuExit
-            // 
-            this.mnuExit.Image = ((System.Drawing.Image)(resources.GetObject("mnuExit.Image")));
-            this.mnuExit.Name = "mnuExit";
-            this.mnuExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.mnuExit.Size = new System.Drawing.Size(186, 22);
-            this.mnuExit.Text = "Exit";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(183, 6);
             // 
             // tbrNew
             // 
@@ -381,6 +439,7 @@ namespace MDINotepad
             this.tbrNew.Name = "tbrNew";
             this.tbrNew.Size = new System.Drawing.Size(23, 22);
             this.tbrNew.Text = "&New";
+            this.tbrNew.Click += new System.EventHandler(this.tbrNew_Click);
             // 
             // tbrOpen
             // 
@@ -390,6 +449,7 @@ namespace MDINotepad
             this.tbrOpen.Name = "tbrOpen";
             this.tbrOpen.Size = new System.Drawing.Size(23, 22);
             this.tbrOpen.Text = "&Open";
+            this.tbrOpen.Click += new System.EventHandler(this.tbrOpen_Click);
             // 
             // tbrSave
             // 
@@ -399,6 +459,7 @@ namespace MDINotepad
             this.tbrSave.Name = "tbrSave";
             this.tbrSave.Size = new System.Drawing.Size(23, 22);
             this.tbrSave.Text = "&Save";
+            this.tbrSave.Click += new System.EventHandler(this.tbrSave_Click);
             // 
             // tbrPrint
             // 
@@ -454,18 +515,42 @@ namespace MDINotepad
             this.tbrHelp.Name = "tbrHelp";
             this.tbrHelp.Size = new System.Drawing.Size(23, 22);
             this.tbrHelp.Text = "He&lp";
+            this.tbrHelp.Click += new System.EventHandler(this.tbrHelp_Click);
             // 
-            // toolStripStatusLabel1
+            // statusStrip1
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(62, 17);
-            this.toolStripStatusLabel1.Text = "Ln 1, Col 1";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mntrCount});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 587);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1024, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // mntrCount
+            // 
+            this.mntrCount.Name = "mntrCount";
+            this.mntrCount.Size = new System.Drawing.Size(62, 17);
+            this.mntrCount.Text = "Ln 1, Col 1";
+            // 
+            // dialogOpen
+            // 
+            this.dialogOpen.FileName = "openFileDialog1";
+            // 
+            // printDialog
+            // 
+            this.printDialog.Document = this.printDocument;
+            this.printDialog.UseEXDialog = true;
+            // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
             // MDINotepad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 557);
+            this.ClientSize = new System.Drawing.Size(1024, 609);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -473,7 +558,10 @@ namespace MDINotepad
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MDINotepad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MDI Notepad";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDINotepad_FormClosing);
+            this.Load += new System.EventHandler(this.MDINotepad_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -511,7 +599,6 @@ namespace MDINotepad
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendFeedBackToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem aboutNotepadToolStripMenuItem;
@@ -532,7 +619,18 @@ namespace MDINotepad
         private System.Windows.Forms.ToolStripButton tbrPaste;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton tbrHelp;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem titleHoriontalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem titleVerticalToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog dialogOpen;
+        private System.Windows.Forms.FontDialog dialogFont;
+        private System.Windows.Forms.ColorDialog dialogColor;
+        public System.Windows.Forms.SaveFileDialog dialogSave;
+        private System.Windows.Forms.PrintDialog printDialog;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        public System.Windows.Forms.ToolStripStatusLabel mntrCount;
+        public System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 
